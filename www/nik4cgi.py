@@ -103,7 +103,7 @@ def render():
 
     # build command line for nik4
     outfile, outputName = tempfile.mkstemp()
-    command = [config.PYTHON, config.NIK4]
+    command = ['/usr/bin/env', config.PYTHON, config.NIK4]
     for k, v in options.items():
         command.append('--{}'.format(k))
         if v is not None:
@@ -180,4 +180,5 @@ def render():
         else:
             msg = 'Resulting file is empty.'
         msg += '\nCommand line:\n{}\n\nOutput:\n'.format(' '.join(command))
-        return msg
+        msg += err
+        return app.response_class(msg, mimetype='text/plain')

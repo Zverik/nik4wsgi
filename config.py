@@ -1,6 +1,6 @@
 import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-PYTHON = 'python3.5'
+PYTHON = 'python3.6'
 
 DEBUG = False
 
