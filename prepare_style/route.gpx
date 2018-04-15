@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpsies="http://www.gpsies.com/GPX/1/0" creator="GPSies http://www.gpsies.com - &amp;#1043;&amp;#1086;&amp;#1088;&amp;#1085;&amp;#1099;&amp;#1081; 2014" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.gpsies.com/GPX/1/0 http://www.gpsies.com/gpsies.xsd">
+  <metadata>
+    <name>Горный 2014</name>
+    <author>
+      <name>kampy</name>
+      <link href="http://www.gpsies.com/mapUser.do?username=kampy">
+        <text>kampy on GPSies.com</text>
+        <type>GPSiesUserOnWeb</type>
+      </link>
+    </author>
+    <link href="http://www.gpsies.com/map.do?fileId=clnnxlsbctssnlht">
+      <text>Горный 2014 on GPSies.com</text>
+      <type>trackOnWeb</type>
+    </link>
+    <time>2014-04-28T20:25:24Z</time>
+  </metadata>
+  <trk>
+    <name>Горный 2014 on GPSies.com</name>
+    <trkseg>
+      <trkpt lat="60.06792410" lon="30.29771800">
+        <ele>32.000000</ele>
+        <time>2010-01-01T00:00:00Z</time>
+      </trkpt>
+      <trkpt lat="60.06944000" lon="30.29748000">
+        <ele>36.000000</ele>
+        <time>2010-01-01T00:01:03Z</time>
+      </trkpt>
+      <trkpt lat="60.07012000" lon="30.29783000">
+        <ele>38.000000</ele>
+        <time>2010-01-01T00:01:31Z</time>
+      </trkpt>
+      <trkpt lat="60.07065000" lon="30.29797000">
+        <ele>39.000000</ele>
+        <time>2010-01-01T00:01:53Z</time>
+      </trkpt>
+      <trkpt lat="60.07121000" lon="30.29817000">
+        <ele>41.000000</ele>
+        <time>2010-01-01T00:02:15Z</time>
+      </trkpt>
+      <trkpt lat="60.07135000" lon="30.29817000">
+        <ele>42.000000</ele>
+        <time>2010-01-01T00:02:21Z</time>
+      </trkpt>
+      <trkpt lat="60.07151000" lon="30.29814000">
+        <ele>43.000000</ele>
+        <time>2010-01-01T00:02:27Z</time>
+      </trkpt>
+      <trkpt lat="60.07175000" lon="30.29792000">
+        <ele>45.000000</ele>
+        <time>2010-01-01T00:02:38Z</time>
+      </trkpt>
+      <trkpt lat="60.07195000" lon="30.29759000">
+        <ele>48.000000</ele>
+        <time>2010-01-01T00:02:48Z</time>
+      </trkpt>
+      <trkpt lat="60.07209000" lon="30.29697000">
+        <ele>52.000000</ele>
+        <time>2010-01-01T00:03:02Z</time>
+      </trkpt>
+      <trkpt lat="60.07212000" lon="30.29658000">
+        <ele>54.000000</ele>
+        <time>2010-01-01T00:03:10Z</time>
+      </trkpt>
+      <trkpt lat="60.07220000" lon="30.29613000">
+        <ele>53.000000</ele>
+        <time>2010-01-01T00:03:19Z</time>
+      </trkpt>
+      <trkpt lat="60.07226000" lon="30.29598000">
+        <ele>53.000000</ele>
+        <time>2010-01-01T00:03:23Z</time>
+      </trkpt>
+      <trkpt lat="60.07237000" lon="30.29586000">
+        <ele>53.000000</ele>
+        <time>2010-01-01T00:03:28Z</time>
+      </trkpt>
+      <trkpt lat="60.07290000" lon="30.29567000">
+        <ele>53.000000</ele>
+        <time>2010-01-01T00:03:50Z</time>
+      </trkpt>
+      <trkpt lat="60.07417000" lon="30.29486000">
+        <ele>49.000000</ele>
+        <time>2010-01-01T00:04:43Z</time>
+      </trkpt>
+      <trkpt lat="60.07439000" lon="30.29453000">
+        <ele>49.000000</ele>
+        <time>2010-01-01T00:04:54Z</time>
+      </trkpt>
+      <trkpt lat="60.07448000" lon="30.29442000">
+        <ele>49.000000</ele>
+        <time>2010-01-01T00:04:58Z</time>
+      </trkpt>
+      <trkpt lat="60.07496000" lon="30.29421000">
+        <ele>51.000000</ele>
+        <time>2010-01-01T00:05:18Z</time>
+      </trkpt>
+      <trkpt lat="60.07510000" lon="30.29411000">
+        <ele>51.000000</ele>
+        <time>2010-01-01T00:05:24Z</time>
+      </trkpt>
+      <trkpt lat="60.07660000" lon="30.29267000">
+        <ele>54.000000</ele>
+        <time>2010-01-01T00:06:30Z</time>
+      </trkpt>
+      <trkpt lat="60.07679000" lon="30.29245000">
+        <ele>54.000000</ele>
+        <time>2010-01-01T00:06:39Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
+
