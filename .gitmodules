@@ -1,6 +1,6 @@
-[submodule "cgi-bin/svg_resize"]
-	path = www/svg_resize
+[submodule "svg_resize"]
+	path = svg_resize
 	url = https://github.com/Zverik/svg-resize.git
-[submodule "cgi-bin/mapnik_group_text"]
-	path = www/mapnik_group_text
+[submodule "mapnik_group_text"]
+	path = mapnik_group_text
 	url = https://github.com/Zverik/mapnik-group-text.git
