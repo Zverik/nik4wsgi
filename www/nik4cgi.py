@@ -180,5 +180,5 @@ def render():
         else:
             msg = 'Resulting file is empty.'
         msg += '\nCommand line:\n{}\n\nOutput:\n'.format(' '.join(command))
-        msg += err
+        msg += err.decode('utf-8')
         return app.response_class(msg, mimetype='text/plain')
