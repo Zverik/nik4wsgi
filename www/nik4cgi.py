@@ -118,7 +118,7 @@ def render():
     # check for running nik4
     ps = subprocess.Popen('ps -e|grep nik4.py', shell=True, stdout=subprocess.PIPE)
     psout, _ = ps.communicate()
-    if 'nik4' in psout:
+    if b'nik4' in psout:
         if traceFile:
             os.remove(traceFile.name)
         return 'Nik4 is running, please try later.'
