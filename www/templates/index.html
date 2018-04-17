@@ -9,6 +9,10 @@
 <script src="{{ url_for('static', filename='Edit.SimpleShape.js') }}"></script>
 <script src="{{ url_for('static', filename='Edit.Rectangle.js') }}"></script>
 <script src="{{ url_for('static', filename='bounds.geojson') }}"></script>
+<script type="text/javascript">
+    srcLayers = {{ layers_json | safe }};
+    firstLayer = '{{ styles[0][0] }}';
+</script>
 <script src="{{ url_for('static', filename='getveloroad.js') }}"></script>
 <style>
   html, body { height: 100%; margin: 0; }
@@ -82,12 +86,13 @@
   <h3>Изображение</h3>
   <div>
     Стиль: <select name="style" id="fstyle" size="1" onchange="changeLayer(this.value)">
-      <option value="veloroad" selected>Veloroad</option>
-      <option value="osm">Osm.org</option>
-    </select><br>
-    <input type="radio" name="format" value="png" id="fmt1"><label for="fmt1">PNG</label><br>
-    <input type="radio" name="format" value="svg" id="fmt2" checked><label for="fmt2">SVG</label><br>
-    <input type="radio" name="format" value="pdf" id="fmt3"><label for="fmt3">PDF</label>
+      {% for st in styles %}
+      <option value="{{ st[0] }}"{% if loop.index == 1 %} selected{% endif %}>{{ st[1] }}</option>
+      {% endfor %}
+    </select>
+    {% for fmt in formats %}
+    <br><input type="radio" name="format" value="{{ fmt[0] }}" id="fmt{{ loop.index }}"{% if fmt[0] == 'svg' %} checked{% endif %}><label for="fmt{{ loop.index }}">{{ fmt[1] }}</label>
+    {% endfor %}
   </div>
 
   <div><input type="submit" id="submit" value="Получить" onclick="javascript: prepareBBox(this.form); return true;"></div>

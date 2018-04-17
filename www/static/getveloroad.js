@@ -8,10 +8,11 @@ window.onload = function() {
     map = L.map('map', { minZoom: 6, maxZoom: 15 }).setView([60, 30], 7);
 
     // layers
-    var veloroad = L.tileLayer('http://tile.osmz.ru/veloroad/{z}/{x}/{y}.png', { attribution: 'Map &copy; OpenStreetMap | Tiles &copy Ilya Zverev' });
-    var osmlayer = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Map &copy; OpenStreetMap' });
-    layers = { 'veloroad': veloroad, 'veloroaden': veloroad, 'osm': osmlayer };
-    map.addLayer(veloroad);
+    layers = {};
+    for (var l in srcLayers)
+        if (srcLayers.hasOwnProperty(l))
+            layers[l] = L.tileLayer(srcLayers[l][0], { attribution: srcLayers[l][1] });
+    map.addLayer(layers[firstLayer]);
 
     // map data bounds. Remove if not needed
   if ('bounds' in window)

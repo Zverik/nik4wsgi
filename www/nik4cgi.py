@@ -1,6 +1,7 @@
 import config
 import os
 import re
+import json
 import datetime
 import tempfile
 import subprocess
@@ -11,12 +12,15 @@ from flask import send_file, request, render_template
 
 @app.route('/')
 def front():
-    return render_template('index.html')
+    return render_template('index.html', styles=config.STYLES,
+                           formats=config.FORMATS,
+                           layers_json=json.dumps(config.TILES))
 
 
 @app.route('/en')
 def front_en():
-    return render_template('index.en.html')
+    return render_template('index.en.html', styles=config.STYLES,
+                           formats=config.FORMATS)
 
 
 @app.route('/render', methods=['POST'])
@@ -93,13 +97,16 @@ def render():
 
     # map style, file format and mime type
     style = request.form.get('style', '')
-    if style not in config.STYLES:
-        style = next(iter(config.STYLES))
+    styles = {s[0]: [s[2], s[3]] for s in config.STYLES}
+    if style not in styles:
+        style = config.STYLES[0][0]
+
     fmt = request.form.get('format', '')
-    if fmt not in config.FORMATS:
-        fmt = next(iter(config.FORMATS))
+    formats = {f[0]: f[2] for f in config.FORMATS}
+    if fmt not in formats:
+        fmt = config.FORMATS[0][0]
     options['format'] = fmt
-    mime = config.FORMATS[fmt]
+    mime = formats[fmt]
 
     # build command line for nik4
     outfile, outputName = tempfile.mkstemp()
@@ -108,9 +115,9 @@ def render():
         command.append('--{}'.format(k))
         if v is not None:
             command.extend(v.split(' '))
-    command.append(config.STYLES[style])
+    command.append(styles[style][0])
     command.append(outputName)
-    if config.PARAMETRIC:
+    if styles[style][1]:
         command.append('--vars')
         for k, v in variables.items():
             command.append('{}={}'.format(k, v))
