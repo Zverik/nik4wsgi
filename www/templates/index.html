@@ -30,62 +30,63 @@
   <input type="hidden" name="bbox" id="fbbox" value="">
   <input type="hidden" name="scalepos" id="fscalepos" value="">
 
-  <h3>Формат бумаги</h3>
+  <h3>{{ L.paper }}</h3>
   <div>
-    Единицы: <input type="radio" name="units" value="mm" id="umm" checked><label for="umm"> мм</label>
-    <input type="radio" name="units" value="px" id="upx"><label for="upx"> пикс</label><br>
+    {{ L.units }}:
+    <input type="radio" name="units" value="mm" id="umm" checked><label for="umm"> {{ L.mm }}</label>
+    <input type="radio" name="units" value="px" id="upx"><label for="upx"> {{ L.px }}</label><br>
     <input type="text" size="3" id="width" name="width" value="">×<input type="text" size="3" id="height" name="height" value=""><br>
     <input type="button" onclick="updateFormat('A4');" value="A4">
     <input type="button" onclick="updateFormat('A5');" value="A5">
     <input type="button" onclick="updateFormat('A6');" value="A6"><br>
-    Поля: <select id="margin" name="margin">
+    {{ L.margins }}: <select id="margin" name="margin">
       <option value="0">0</option>
       <option value="5">5</option>
       <option value="7">7</option>
       <option value="10" selected>10</option>
       <option value="15">15</option>
       <option value="20">20</option>
-    </select> мм<br>
+    </select> {{ L.mm }}<br>
   </div>
   <div>
-    <input type="radio" name="dim" value="both" id="dim1" checked><label for="dim1">Использовать оба измерения</label><br>
-    <input type="radio" name="dim" value="width" id="dim2"><label for="dim2">Взять ширину, вычислить высоту</label><br>
-    <input type="radio" name="dim" value="height" id="dim3"><label for="dim3">Взять высоту, вычислить ширину</label><br>
-    <input type="radio" name="dim" value="zoom" id="dim4"><label for="dim4">Вычислить из масштаба</label>
+    <input type="radio" name="dim" value="both" id="dim1" checked><label for="dim1">{{ L.d_both }}</label><br>
+    <input type="radio" name="dim" value="width" id="dim2"><label for="dim2">{{ L.d_width }}</label><br>
+    <input type="radio" name="dim" value="height" id="dim3"><label for="dim3">{{ L.d_height }}</label><br>
+    <input type="radio" name="dim" value="zoom" id="dim4"><label for="dim4">{{ L.d_zoom }}</label>
     <input type="text" size="2" id="zoom" name="zoom" value="7">
   </div>
 
-  <h3>Границы области</h3>
+  <h3>{{ L.bbox }}</h3>
   <div>
-    <input type="button" onclick="moveAreaHere();" value="Переместить в окно карты"><br>
-    <input type="button" onclick="fitPaper();" value="Применить пропорции бумаги"><br>
-    <input type="button" onclick="fitToTrace();" value="К границам трека">
+    <input type="button" onclick="moveAreaHere();" value="{{ L.b_move }}"><br>
+    <input type="button" onclick="fitPaper();" value="{{ L.b_paper }}"><br>
+    <input type="button" onclick="fitToTrace();" value="{{ L.b_trace }}">
   </div>
 
-  <h3>Дополнительно</h3>
+  <h3>{{ L.features }}</h3>
   <div>
-    Файл трека: <input type="file" name="trace" id="file"><br>
-    <input type="checkbox" id="drawtrace" name="drawtrace" checked><label for="drawtrace"> рисовать трек</label><br>
-    <input type="checkbox" id="fit" name="fit"><label for="fit"> границы из трека</label><br>
+    {{ L.trace }}: <input type="file" name="trace" id="file"><br>
+    <input type="checkbox" id="drawtrace" name="drawtrace" checked><label for="drawtrace"> {{ L.draw_trace }}</label><br>
+    <input type="checkbox" id="fit" name="fit"><label for="fit"> {{ L.fit_trace }}</label><br>
   </div>
 
   <div>
-    <input type="checkbox" name="scale" id="scale" onchange="enableScale(this.checked);"><label for="scale">Линейный масштаб</label>
+    <input type="checkbox" name="scale" id="scale" onchange="enableScale(this.checked);"><label for="scale">{{ L.scale }}</label>
     <select id="scalens" name="scalens" size="1">
-      <option value="3-1">3 × 1 км</option>
-      <option value="5-1" selected>5 × 1 км</option>
-      <option value="5-2">5 × 2 км</option>
-      <option value="5-4">5 × 4 км</option>
-      <option value="3-5">3 × 5 км</option>
-      <option value="5-5">5 × 5 км</option>
-      <option value="3-10">3 × 10 км</option>
-      <option value="5-10">5 × 10 км</option>
+      <option value="3-1">3 × 1 {{ L.km }}</option>
+      <option value="5-1" selected>5 × 1 {{ L.km }}</option>
+      <option value="5-2">5 × 2 {{ L.km }}</option>
+      <option value="5-4">5 × 4 {{ L.km }}</option>
+      <option value="3-5">3 × 5 {{ L.km }}</option>
+      <option value="5-5">5 × 5 {{ L.km }}</option>
+      <option value="3-10">3 × 10 {{ L.km }}</option>
+      <option value="5-10">5 × 10 {{ L.km }}</option>
     </select>
   </div>
 
-  <h3>Изображение</h3>
+  <h3>{{ L.format }}</h3>
   <div>
-    Стиль: <select name="style" id="fstyle" size="1" onchange="changeLayer(this.value)">
+    {{ L.style }}: <select name="style" id="fstyle" size="1" onchange="changeLayer(this.value)">
       {% for st in styles %}
       <option value="{{ st[0] }}"{% if loop.index == 1 %} selected{% endif %}>{{ st[1] }}</option>
       {% endfor %}
@@ -95,11 +96,11 @@
     {% endfor %}
   </div>
 
-  <div><input type="submit" id="submit" value="Получить" onclick="javascript: prepareBBox(this.form); return true;"></div>
+  <div><input type="submit" id="submit" value="{{ L.submit }}" onclick="javascript: prepareBBox(this.form); return true;"></div>
 
   <div>
-    <input type="button" id="permbtn" value="Постоянная ссылка" onclick="permalink();">
-    <a id="permalink" href="#" style="display: none;">Ссылка</a>
+    <input type="button" id="permbtn" value="{{ L.c_permalink }}" onclick="permalink();">
+    <a id="permalink" href="#" style="display: none;">{{ L.permalink }}</a>
   </div>
 </form>
 <div id="map"></div>

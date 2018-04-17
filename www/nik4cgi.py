@@ -7,20 +7,24 @@ import tempfile
 import subprocess
 import shutil
 from www import app
+from www.i18n import STRINGS
 from flask import send_file, request, render_template
 
 
 @app.route('/')
 def front():
-    return render_template('index.html', styles=config.STYLES,
-                           formats=config.FORMATS,
-                           layers_json=json.dumps(config.TILES))
+    return page('ru')
 
 
 @app.route('/en')
 def front_en():
-    return render_template('index.en.html', styles=config.STYLES,
-                           formats=config.FORMATS)
+    return page('en')
+
+
+def page(lang):
+    return render_template('index.html', styles=config.STYLES,
+                           formats=config.FORMATS, L=STRINGS[lang],
+                           layers_json=json.dumps(config.TILES))
 
 
 @app.route('/render', methods=['POST'])
