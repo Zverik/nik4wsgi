@@ -8,10 +8,11 @@
 <script src="{{ url_for('static', filename='togeojson.js') }}"></script>
 <script src="{{ url_for('static', filename='Edit.SimpleShape.js') }}"></script>
 <script src="{{ url_for('static', filename='Edit.Rectangle.js') }}"></script>
-<script src="{{ url_for('static', filename='bounds.geojson') }}"></script>
+<script src="{{ url_for('static', filename='leaflet.ajax.min.js') }}"></script>
 <script type="text/javascript">
     srcLayers = {{ layers_json | safe }};
     firstLayer = '{{ styles[0][0] }}';
+    boundsUrl = "{{ url_for('static', filename='bounds.geojson') }}";
 </script>
 <script src="{{ url_for('static', filename='getveloroad.js') }}"></script>
 <style>

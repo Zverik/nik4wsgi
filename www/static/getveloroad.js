@@ -15,8 +15,8 @@ window.onload = function() {
     map.addLayer(layers[firstLayer]);
 
     // map data bounds. Remove if not needed
-  if ('bounds' in window)
-    L.geoJson(bounds, { style: function() { return { color: '#600', weight: 3, fill: false }; } }).addTo(map);
+    if ('boundsUrl' in window)
+      L.geoJson.ajax(boundsUrl, { style: function() { return { color: '#600', weight: 3, fill: false }; } }).addTo(map);
     // scale bar position
     scale = L.marker([59.8, 29], { draggable: true });
     // rectangle for image bounding box
